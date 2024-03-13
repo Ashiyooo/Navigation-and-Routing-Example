@@ -1,4 +1,4 @@
-import "dart:html";
+import "package:demo2/todo.dart";
 import "package:flutter/material.dart";
 
 const String randomThing = """A UP education seeks to produce graduates imbued with an abiding sense of responsibility to their people and nation, the skills and mindsets to improve human life, and a commitment to the freedom and welfare of all.
@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3, // number of tabs
+      length: 4, // number of tabs
       child: Scaffold(
         appBar: AppBar(
           title: const Text("HomePage Tab Examples"),
@@ -22,14 +22,16 @@ class HomePage extends StatelessWidget {
                 Tab(icon: Icon(Icons.directions_car)),
                 Tab(icon: Icon(Icons.directions_bike)),
                 Tab(icon: Icon(Icons.directions_boat)),
+                Tab(icon: Icon(Icons.today_outlined)),
               ] 
             ),
           ),
-       body: const TabBarView(
+       body: TabBarView(
         children: [
-            ChangingContainer(),
-            TextBox(text: randomThing),
-            CheckerBoard(),
+            const ChangingContainer(),
+            const TextBox(text: randomThing),
+            const CheckerBoard(),
+            TodosScreen(todos: List.generate(20, (i) => Todo('Todo $i', 'A description of what needs to be done for Todo $i',)))
           ]
         ), 
       )
@@ -55,8 +57,10 @@ class _ChangingContainer extends State<ChangingContainer> {
           _active = !_active;
         }),
         child: Container(
+            width: 300,
+            height: 300,
             color: _active? Colors.deepOrange: Colors.amber,
-            child: const Text("Wieee"),
+            child: const Center(child: Text("Wieee", style: TextStyle(fontSize: 20.0),)),
           )
         ),
     );

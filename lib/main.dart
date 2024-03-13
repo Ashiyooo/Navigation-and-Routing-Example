@@ -1,5 +1,5 @@
 import 'package:demo2/homepage.dart';
-import 'package:demo2/page1.dart';
+import 'package:demo2/todo.dart';
 import 'package:demo2/page2.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +16,7 @@ class MainApp extends StatelessWidget {
       initialRoute: "/",
       routes: {
         "/": (context) => const HomePage(),
-        "/page1": (context) => const Page1(),
+        //"/page1": (context) => const TodosScreen(),
         "/page2": (context) => const Page2(),
       },
     );
