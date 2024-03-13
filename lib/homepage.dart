@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 4, // number of tabs
+      length: 5, // number of tabs
       child: Scaffold(
         appBar: AppBar(
           title: const Text("HomePage Tab Examples"),
@@ -23,6 +23,7 @@ class HomePage extends StatelessWidget {
                 Tab(icon: Icon(Icons.directions_bike)),
                 Tab(icon: Icon(Icons.directions_boat)),
                 Tab(icon: Icon(Icons.today_outlined)),
+                Tab(icon: Icon(Icons.abc_rounded)),
               ] 
             ),
           ),
@@ -31,7 +32,13 @@ class HomePage extends StatelessWidget {
             const ChangingContainer(),
             const TextBox(text: randomThing),
             const CheckerBoard(),
-            TodosScreen(todos: List.generate(20, (i) => Todo('Todo $i', 'A description of what needs to be done for Todo $i',)))
+            TodosScreen(todos: List.generate(20, (i) => Todo('Todo $i', 'A description of what needs to be done for Todo $i',))),
+            Center(
+              child: ElevatedButton(
+                child: const Text('Go to Page 1'),
+                onPressed: () => Navigator.pushNamed(context, '/page2')
+              )
+            ),
           ]
         ), 
       )
