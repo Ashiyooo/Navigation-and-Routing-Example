@@ -35,7 +35,7 @@ class HomePage extends StatelessWidget {
             TodosScreen(todos: List.generate(20, (i) => Todo('Todo $i', 'A description of what needs to be done for Todo $i',))),
             Center(
               child: ElevatedButton(
-                child: const Text('Go to Page 1'),
+                child: const Text('Go to Returning data example'),
                 onPressed: () => Navigator.pushNamed(context, '/page2')
               )
             ),
