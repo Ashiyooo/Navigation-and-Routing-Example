@@ -10,8 +10,14 @@ class Page2 extends StatelessWidget {
         title: const Text('Returning Data Demo'),
       ),
       // Create the SelectionButton widget in the next step.
-      body: const Center(
-        child: SelectionButton(),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SelectionButton(),
+            ElevatedButton(onPressed: () => Navigator.pop(context), child: Text("Go Back"))
+          ]
+        ),
       ),
     );
   }

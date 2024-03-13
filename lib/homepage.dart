@@ -10,6 +10,7 @@ UP aims to achieve this through its General Education program, one that develops
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
   
+  
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -40,6 +41,21 @@ class HomePage extends StatelessWidget {
               )
             ),
           ]
+        ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.all(10),
+          children: [
+              const DrawerHeader(child: Text("Menu")),
+              ListTile(
+                title: const Text('Hi?'),   
+                onTap: (){
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Hewwo")));
+                  Navigator.pop(context);
+                },
+              )
+            ],
+          )
         ), 
       )
     );

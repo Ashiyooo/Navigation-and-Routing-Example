@@ -33,7 +33,7 @@ class TodosScreen extends StatelessWidget {
                   builder: (context) => DetailScreen(todo: todos[index]),
                 ),
               );
-            },
+            }, 
           );
         },
       ),
